@@ -5,7 +5,6 @@ public class CashRegister {
 		
 		System.out.println("Hello, welcome to the cash register");
 		
-		//printCost();
 		printChange();
 		
 		System.out.println("Have a wonderful day!");
@@ -25,6 +24,15 @@ public class CashRegister {
 		double change = (moneyRecieved - cost); 
 		
 		System.out.println("Your change is: " + change);	
+		
+		if (cost > moneyRecieved) {
+			System.out.println("Error, payment denied.");
+		}
+		
+		if(cost == moneyRecieved) {
+			System.out.println("You've given the exact amount. No change needed!");
+		}
+		
 		
 	}
 	

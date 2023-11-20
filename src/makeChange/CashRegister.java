@@ -22,8 +22,17 @@ public class CashRegister {
 		double moneyRecieved = scanner.nextDouble();
 	
 		double change = (moneyRecieved - cost); 
+		int result = 0;
 		
-		System.out.println("Your change is: " + change);	
+		if(change < 1 && change % 25 == 1) {
+			System.out.println("Quarters: " + result);
+		} else if (change < 1 && change % 10 == 1) {
+			System.out.println("Dimes: " + result);
+		} else if (change < 1 && change % 5 == 1) {
+			System.out.println("Nickels: " + result);
+		} else if(change < 1 && change % 1 == 1) {
+			System.out.println("Pennies: " + result);
+		}
 		
 		if (cost > moneyRecieved) {
 			System.out.println("Error, payment denied.");
@@ -33,7 +42,10 @@ public class CashRegister {
 			System.out.println("You've given the exact amount. No change needed!");
 		}
 		
+		System.out.println("Your change is: " + change);
+		System.out.println(result);
 		
+		scanner.close();
 	}
 	
 }
